@@ -16,3 +16,4 @@ Fattas något eller vill du förbättra någon redan existerande förklaring? Kl
 * För att skriva ekvationer, använd \begin{equation} \end{equation}
 * Lägg till ditt namn i Authors om du bidragit :)
 * **Kontrollera** att det du skriver stämmer
+* **Kör pdflatex** på LaTeX-filen innan du gör en pull-request
