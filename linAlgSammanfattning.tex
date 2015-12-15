@@ -16,6 +16,10 @@
 %specialkommandon
 \newenvironment{definition}[1]{\subsection{\textcolor{Cerulean}{Definition: #1}}}{}
 
+%extramatte
+\usepackage{amsmath}
+\usepackage{mathtools}
+
 \begin{document}
 \maketitle
 \tableofcontents
@@ -24,4 +28,38 @@
 \section{Baser \& Basbyten}
 \definition{Bas}
 En bas är grunden för ett vektorrum och utgörs av ett antal \emph{basvektorer}, vilka är linjärt oberoende och spänner upp vektorrummet.
+
+Ex: en bas i R2
+$$
+B = \{\vec{v_{1}}, \vec{v_{2}} \}
+$$
+
+\definition{Standardbas}
+En bas i RN med n st basvektorer vars element är bara nollor förutom en etta i den kolumnen m för den m-te basvektorn i basen.
+
+\begin{equation}
+B = \left \{
+\begin{bmatrix}
+1 \\
+0 \\
+\vdots \\
+0 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+0 \\
+1 \\
+\vdots \\
+0 \\
+\end{bmatrix}
+, \cdots
+,
+\begin{bmatrix}
+0 \\
+0 \\
+\vdots \\
+1 \\
+\end{bmatrix}
+\right \}
+\end{equation}
 \end{document}
