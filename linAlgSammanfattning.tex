@@ -15,6 +15,7 @@
 
 %specialkommandon
 \newenvironment{definition}[1]{\subsection{\textcolor{Cerulean}{Definition: #1}}}{}
+\newcommand{\comment}[1]{\begin{center}\textcolor{Gray}{#1} \end{center}}
 
 %extramatte
 \usepackage{amsmath}
@@ -27,15 +28,14 @@
 
 \section{Baser \& Basbyten}
 \definition{Bas}
-En bas är grunden för ett vektorrum och utgörs av ett antal \emph{basvektorer}, vilka är linjärt oberoende och spänner upp vektorrummet.
-
-Ex: en bas i R2
-$$
+En bas är grunden för ett vektorrum och utgörs av ett antal \emph{basvektorer}, vilka är linjärt oberoende och spänner upp vektorrummet. Om dessa 2 krav uppfylls är \emph{dimensionen} för vektorrummet = antal basvektorer.
+\begin{equation}
 B = \{\vec{v_{1}}, \vec{v_{2}} \}
-$$
-
+\end{equation}
+\comment{En bas i R2}
 \definition{Standardbas}
 En bas i RN med n st basvektorer vars element är bara nollor förutom en etta i den kolumnen m för den m-te basvektorn i basen.
+Är per definition \emph{ortonomal}.
 
 \begin{equation}
 B = \left \{
@@ -52,7 +52,7 @@ B = \left \{
 \vdots \\
 0 \\
 \end{bmatrix}
-, \cdots
+, \ldots
 ,
 \begin{bmatrix}
 0 \\
