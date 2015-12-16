@@ -14,7 +14,7 @@
 \usepackage[dvipsnames]{xcolor}
 
 %specialkommandon
-\newenvironment{definition}[1]{\subsection{\textcolor{Cerulean}{Definition: #1}}}{}
+\newenvironment{begrepp}[1]{\subsection{\textcolor{Cerulean}{Begrepp: #1}}}{}
 \newcommand{\comment}[1]{\begin{center}\textcolor{Gray}{#1} \end{center}}
 
 %extramatte
@@ -27,13 +27,13 @@
 \newpage
 
 \section{Baser \& Basbyten}
-\definition{Bas}
+\begrepp{Bas}
 En bas är grunden för ett vektorrum och utgörs av ett antal \emph{basvektorer}, vilka är linjärt oberoende och spänner upp vektorrummet. Om dessa 2 krav uppfylls är \emph{dimensionen} för vektorrummet = antal basvektorer.
 \begin{equation}
 B = \{\vec{v_{1}}, \vec{v_{2}} \}
 \end{equation}
 \comment{En bas i R2}
-\definition{Standardbas}
+\begrepp{Standardbas}
 En bas i RN med n st basvektorer vars element är bara nollor förutom en etta i den kolumnen m för den m-te basvektorn i basen.
 Är per definition \emph{ortonomal}.
 
@@ -62,4 +62,11 @@ B = \left \{
 \end{bmatrix}
 \right \}
 \end{equation}
+\begrepp{Basbyte}
+En vektor kan beskrivas i ett vektorrum med hjälp av \emph{koordinater}, denna koordinatrepresentation skiljer sig mellan olika vektorrum som har olika baser. Ibland vill man byta mellan baser 
+då det kan ge enklare beräkningar.
+
+\begrepp{Koordinater \& Koordinatvektor}
+Om $S = \{\vec{v_{1}}, \ldots, \vec{v_{n}}\}$ är en bas för ett vektorrum och $\vec{v} = c_{1}\vec{v_{1}} + \cdots + c_{n}\vec{v_{n}}$ så är $c_{1},\ldots,c_{n}$ koordinater och $\vec{c} = (c_{1}, \ldots, c_{n}) = (\vec{v})_{S}$ koordinatvektorn för $\vec{v}$ i basen $S$ 
+
 \end{document}
