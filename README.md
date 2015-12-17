@@ -13,7 +13,7 @@ Fattas något eller vill du förbättra någon redan existerande förklaring? Kl
 * Skriv allt så kortfattat och koncist som möjligt
 * Se till att dokumentet har en bra struktur
 * Allmänna lösningar ska helst inte innehålla siffror, använd symboler (t.ex. grekiska tecken)
-* För att skriva ekvationer, använd \begin{equation} \end{equation}
+* För att skriva ekvationer, använd \begin{displaymath} \end{displaymath}
 * Lägg till ditt namn i Authors om du bidragit :)
 * **Kontrollera** att det du skriver stämmer
 * **Kör pdflatex** på LaTeX-filen innan du gör en pull-request
