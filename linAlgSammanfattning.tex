@@ -1,10 +1,11 @@
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 
 %svenska
 \usepackage[swedish]{babel}
 \usepackage[utf8]{inputenc}
 
-\author{Axel Kennedal} % Skriv ditt namn här om du bidragit :)!
+\author{Axel Kennedal \\ kennedal@kth.se \\\\
+Marcus Östling \\} % Skriv ditt namn här om du bidragit :)!
 \title{Sammanfattning i Linjär Algebra}
 
 %textutseende
@@ -12,10 +13,13 @@
 
 %layout
 \usepackage[dvipsnames]{xcolor}
-
+\usepackage[margin = 2cm]{geometry}
+\setlength{\columnsep}{1cm}
 %specialkommandon
-\newenvironment{begrepp}[1]{\subsection{\textcolor{Cerulean}{Begrepp: #1}}}{}
-\newcommand{\comment}[1]{\begin{center}\textcolor{Gray}{#1} \end{center}}
+\newcommand{\indelning} [1] {\subsection{#1}}
+\newcommand{\begrepp} [1] {\subsubsection{\textcolor{Cerulean}{Begrepp: #1}}}
+\newcommand{\metod} [1] {\subsubsection{\uppercase{\small{Beräkningsmetod: #1}}}}
+\newcommand{\comment} [1] {\begin{center}\textcolor{Gray}{#1} \end{center}}
 
 %extramatte
 \usepackage{amsmath}
@@ -26,18 +30,106 @@
 \tableofcontents
 \newpage
 
+\newgeometry{margin = 1cm}
+\twocolumn
+
+\section{Matriser}
+\indelning{Vanliga beräkningar}
+\begrepp{Matris}
+En uppställning av tal i rader och kolumner, storleken anges som $rader \times kolumner$ eller $n \times m$.
+
+\metod{Matrisaddition}
+Addera alla element var för sig.
+\begin{displaymath}
+\begin{bmatrix}
+a \\
+b \\
+\end{bmatrix}
++
+\begin{bmatrix}
+c \\
+d \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+a + c \\
+b + d \\
+\end{bmatrix}
+\end{displaymath}
+
+\metod{Multiplikation med skalär}
+Multiplicera varje element i matrisen med skalären.
+\begin{displaymath}
+s *
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+sa & sb \\
+sc & sd \\
+\end{bmatrix}
+\end{displaymath}
+\comment{$s\in R$}
+
+\metod{Matrismultiplikation}
+Endast definierad för två matriser A $m \times n$ och B $n \times  m$ vilket ger en matris C $m \times m$.
+Multiplicera varje rad i A med B's kolumner.
+\begin{displaymath}
+\begin{bmatrix}
+c & e \\
+d & f \\
+\end{bmatrix}
+\begin{bmatrix}
+a \\
+b \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+ca + eb \\
+da + fb \\
+\end{bmatrix}
+\end{displaymath}
+\comment{Multiplikation av en $2 \times 2$ och en $2 \times 1$ matris}
+
+\begrepp{Identitetsmatrisen}
+Multiplikation av en matris A med identitetsmatrisen ger tillbaka A oförändrad.
+\begin{displaymath}
+I_{3} =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}
+\end{displaymath}
+\comment{Identitetsmatrisen har ettor längs diagonalen och nollor på alla andra platser}
+
+\begrepp{Symmetrisk matris}
+Innebär att $A^T = A$.
+Om A är symmetrisk och inverterbar är $A^{-1}$ symmetrisk.
+
+\indelning{Invers}
+\begrepp{Matrisinvers}
+Krav för att en matris A ska vara inverterbar:
+\begin{itemize}
+\item $\exists B: AB = I$.
+\item A är kvadratisk
+\item $\det(A) \neq 0$
+\item A's reducerade form är I
+\end{itemize}
 \section{Baser \& Basbyten}
 \begrepp{Bas}
 En bas är grunden för ett vektorrum och utgörs av ett antal \emph{basvektorer}, vilka är linjärt oberoende och spänner upp vektorrummet. Om dessa 2 krav uppfylls är \emph{dimensionen} för vektorrummet = antal basvektorer.
-\begin{equation}
+\begin{displaymath}
 B = \{\vec{v_{1}}, \vec{v_{2}} \}
-\end{equation}
+\end{displaymath}
 \comment{En bas i R2}
 \begrepp{Standardbas}
 En bas i RN med n st basvektorer vars element är bara nollor förutom en etta i den kolumnen m för den m-te basvektorn i basen.
 Är per definition \emph{ortonomal}.
 
-\begin{equation}
+\begin{displaymath}
 B = \left \{
 \begin{bmatrix}
 1 \\
@@ -61,12 +153,12 @@ B = \left \{
 1 \\
 \end{bmatrix}
 \right \}
-\end{equation}
+\end{displaymath}
 \begrepp{Basbyte}
 En vektor kan beskrivas i ett vektorrum med hjälp av \emph{koordinater}, denna koordinatrepresentation skiljer sig mellan olika vektorrum som har olika baser. Ibland vill man byta mellan baser 
 då det kan ge enklare beräkningar.
 
 \begrepp{Koordinater \& Koordinatvektor}
-Om $S = \{\vec{v_{1}}, \ldots, \vec{v_{n}}\}$ är en bas för ett vektorrum och $\vec{v} = c_{1}\vec{v_{1}} + \cdots + c_{n}\vec{v_{n}}$ så är $c_{1},\ldots,c_{n}$ koordinater och $\vec{c} = (c_{1}, \ldots, c_{n}) = (\vec{v})_{S}$ koordinatvektorn för $\vec{v}$ i basen $S$ 
+Om $S = \{\vec{v_{1}}, \ldots, \vec{v_{n}}\}$ är en bas för ett vektorrum och $\vec{v} = c_{1}\vec{v_{1}} + \cdots + c_{n}\vec{v_{n}}$ så är $c_{1},\ldots,c_{n}$ koordinater och $\vec{c} = (c_{1}, \ldots, c_{n}) = {(\vec{v})}_{S}$ koordinatvektorn för $\vec{v}$ i basen $S$. 
 
 \end{document}
